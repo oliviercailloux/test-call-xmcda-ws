@@ -1,0 +1,6 @@
+= test-call-xmcda-ws
+A short sample that calls an http://www.decision-deck.org/ws/webServices.html[XMCDA Web Service] using Java. See link:src/test/resources/io/github/oliviercailloux/y2017/test_call_xmcda_ws/TestHello.java[TestHello.java].
+
+Watch out: ugly code.
+
+
