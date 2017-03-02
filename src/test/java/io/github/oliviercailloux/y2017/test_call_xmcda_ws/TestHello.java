@@ -86,7 +86,7 @@ public class TestHello {
 	public void setFileContentToNodeValue(String sourceFile, Node destNode) throws IOException {
 		final URL resUrl = getClass().getResource(sourceFile);
 		final String resStr = Resources.toString(resUrl, StandardCharsets.UTF_8);
-		final Text textNode = destNode.getOwnerDocument().createTextNode(resStr);
+		final Text textNode = destNode.getOwnerDocument().createCDATASection(resStr);
 		destNode.appendChild(textNode);
 	}
 
@@ -190,10 +190,18 @@ public class TestHello {
 
 		final NodeList directChildren = solution.getChildNodes();
 		assertEquals(1, directChildren.getLength());
-		final Node firstChild = directChildren.item(0);
-		assertEquals("requestSolutionResponse", firstChild.getNodeName());
-		final NodeList subChildren = firstChild.getChildNodes();
+		final Node requestSolutionResponse = directChildren.item(0);
+		assertEquals("requestSolutionResponse", requestSolutionResponse.getNodeName());
+		final NodeList subChildren = requestSolutionResponse.getChildNodes();
 		assertEquals(4, subChildren.getLength());
+		final Node alternativesRanks = subChildren.item(0);
+		assertEquals("alternativesRanks", alternativesRanks.getNodeName());
+		final NodeList alternativesRanksContentList = alternativesRanks.getChildNodes();
+		assertEquals(1, alternativesRanksContentList.getLength());
+		final Node alternativesRanksContent = alternativesRanksContentList.item(0);
+		assertEquals(Node.TEXT_NODE, alternativesRanksContent.getNodeType());
+
+		LOGGER.info("Content of returned alternativesRanks: {}.", alternativesRanksContent.getNodeValue());
 	}
 
 	@Test
