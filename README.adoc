@@ -1,5 +1,7 @@
 = test-call-xmcda-ws
 
+image:https://travis-ci.org/oliviercailloux/test-call-xmcda-ws.svg?branch=master["Build Status", link="https://travis-ci.org/oliviercailloux/test-call-xmcda-ws"]
+
 A short sample that calls an http://www.decision-deck.org/ws/[XMCDA Web Service] using Java. See link:src/test/java/io/github/oliviercailloux/y2017/test_call_xmcda_ws/TestHello.java[TestHello.java].
 
 Watch out: ugly code.
