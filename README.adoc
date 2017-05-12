@@ -1,5 +1,4 @@
 = test-call-xmcda-ws
-:sectanchors:
 
 image:https://travis-ci.org/oliviercailloux/test-call-xmcda-ws.svg?branch=master["Build Status", link="https://travis-ci.org/oliviercailloux/test-call-xmcda-ws"]
 
